@@ -1,0 +1,79 @@
+.wrapper {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.icon {
+    margin: 50px 0 30px 0;
+}
+
+.testimonial {
+    position: relative;
+
+    .content {
+        font-size: 17px;
+        font-style: italic;
+        padding: 0 147px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.testimonial:hover .prev-btn {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+}
+
+.testimonial:hover .next-btn {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+}
+
+.author-name {
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-top: 14px;
+
+    .separate {
+        margin: 0 4px;
+    }
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    font-size: 3.2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+
+    &:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+}
+
+.prev-btn {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.brand-item {
+    margin: 0 13px;
+}

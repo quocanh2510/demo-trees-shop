@@ -1,0 +1,37 @@
+.wrapper {
+    padding: 31px 0 90px 0;
+}
+
+.item {
+    font-family: 'Lora', serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    padding-right: 50px;
+    border-right: 1px solid #ebebeb;
+
+    img {
+        width: 48px;
+        height: 32px;
+        object-fit: cover;
+        margin-right: 18px;
+    }
+}
+
+.info {
+    h2 {
+        font-size: 1.4rem;
+        font-family: 'Lora', serif;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+
+    p {
+        font-weight: 300;
+        font-family: 'Rubik', serif;
+    }
+}
+
+.border-none {
+    border: none;
+}

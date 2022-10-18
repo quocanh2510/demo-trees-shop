@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65px 0;
+    margin-top: 45px;
+    background: url(https://htmldemo.net/lukani/lukani/assets/img/bg/bkg_top_vogue2.png) top center no-repeat;
+
+    p {
+        padding: 0 386px;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 20px;
+    }
+}

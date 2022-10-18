@@ -1,0 +1,19 @@
+.wrapper {
+    padding: 26px 0;
+    min-height: 150px;
+    min-width: 190px;
+    box-shadow: 0 3px 11px 0 rgb(0 0 0 / 10%);
+    background-color: var(--white);
+    animation: slideShow 0.4s linear;
+}
+
+@keyframes slideShow {
+    from {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

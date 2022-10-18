@@ -1,0 +1,32 @@
+.scroll-top {
+    position: fixed;
+    z-index: 99;
+    bottom: 85px;
+    right: 20px;
+    height: 45px;
+    width: 45px;
+    font-size: 1.4rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    &:hover .scroll-top-icon {
+        animation: goTop 1s ease infinite;
+    }
+}
+
+.scroll-top-icon {
+    transition: all 0.3s ease;
+}
+
+@keyframes goTop {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
