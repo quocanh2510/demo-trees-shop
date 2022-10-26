@@ -18,7 +18,7 @@ function ShippingArea() {
                         </div>
                     </div>
                     <div className={cx('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-6', 'col-xl-4')}>
-                        <div className={cx('item')}>
+                        <div className={cx('item', 'tablet-border-none')}>
                             <img src="https://htmldemo.net/lukani/lukani/assets/img/about/shipping2.png" alt="" />
                             <div className={cx('info')}>
                                 <h2>Safe Payment</h2>

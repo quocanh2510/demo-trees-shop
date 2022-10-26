@@ -15,12 +15,12 @@ function Slide() {
             variant="dark"
             prevIcon={
                 <span>
-                    <FontAwesomeIcon className={cx('prev-btn')} icon={faChevronLeft} />
+                    <FontAwesomeIcon className={cx('prev-btn', 'hide-on-mobile-tablet')} icon={faChevronLeft} />
                 </span>
             }
             nextIcon={
                 <span>
-                    <FontAwesomeIcon className={cx('next-btn')} icon={faChevronRight} />
+                    <FontAwesomeIcon className={cx('next-btn', 'hide-on-mobile-tablet')} icon={faChevronRight} />
                 </span>
             }
             fade

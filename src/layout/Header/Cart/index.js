@@ -1,29 +1,24 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faClose } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 
+import { useStore } from '~/store/hooks';
 import styles from './Cart.module.scss';
 import ModalWrapper from '~/components/Modal';
+import { deleteProductCart } from '~/store/actions';
 
 const cx = classNames.bind(styles);
 
 function Cart({ handleCloseCart }) {
-    const [productCart, setProductCart] = useState(() => {
-        const initialProducts = JSON.parse(localStorage.getItem('products')) ?? [];
-        return initialProducts;
-    });
+    const [state, dispatch] = useStore();
+    const { cartProducts } = state;
 
     const handleDeleteCartProduct = (id) => {
-        setProductCart(() => {
-            const newProducts = productCart.filter((item, index) => index !== id);
-            const jsonProducts = JSON.stringify(newProducts);
-            localStorage.setItem('products', jsonProducts);
-            return newProducts;
-        });
+        dispatch(deleteProductCart(id));
     };
 
-    let totalPrice = productCart.reduce((acc, product) => {
+    let totalPrice = cartProducts.reduce((acc, product) => {
         return acc + product.price;
     }, 0);
 
@@ -31,12 +26,12 @@ function Cart({ handleCloseCart }) {
         <ModalWrapper className={cx('modal')}>
             <div className={cx('header')}>
                 <span className={cx('title')}>
-                    Cart: <span className={cx('quantity')}>{productCart.length} product</span>
+                    Cart: <span className={cx('quantity')}>{cartProducts.length} product</span>
                 </span>
                 <FontAwesomeIcon className={cx('close-btn')} icon={faClose} onClick={handleCloseCart} />
             </div>
             <ul className={cx('cart-list')}>
-                {productCart.map((product, index) => (
+                {cartProducts.map((product, index) => (
                     <li key={index} className={cx('cart-item')}>
                         <img src={product.image} alt="" />
                         <div className={cx('content')}>
@@ -68,5 +63,9 @@ function Cart({ handleCloseCart }) {
         </ModalWrapper>
     );
 }
+
+Cart.propTypes = {
+    handleCloseCart: PropTypes.func,
+};
 
 export default Cart;

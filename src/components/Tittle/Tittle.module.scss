@@ -18,3 +18,30 @@
         transform: translatex(-50%);
     }
 }
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .wrapper {
+        font-size: 2.4rem;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .wrapper {
+        font-size: 3.4rem;
+    }
+}

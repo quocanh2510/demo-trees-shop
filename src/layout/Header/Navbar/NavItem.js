@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -14,5 +15,10 @@ const NavItem = forwardRef(({ title, icon }, ref) => {
         </div>
     );
 });
+
+NavItem.propTypes = {
+    title: PropTypes.string,
+    icon: PropTypes.object,
+};
 
 export default NavItem;

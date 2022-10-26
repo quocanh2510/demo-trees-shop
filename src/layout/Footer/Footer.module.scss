@@ -127,3 +127,75 @@
 .coppyright-icon {
     color: #dc3545;
 }
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .footer-top {
+        text-align: center;
+        padding: 60px 0 0;
+    }
+    .widget {
+        margin-bottom: 60px;
+
+        & h3 {
+            margin-bottom: 10px;
+        }
+
+        & h3::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .note {
+        margin-top: 6px;
+    }
+    .coppyright-text {
+        font-size: 1.2rem;
+    }
+    .payment img {
+        width: 250px;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .footer-top {
+        padding: 90px 30px;
+    }
+    .widget {
+        margin-bottom: 30px;
+    }
+    .menu-item {
+        font-size: 1.3rem;
+    }
+    .footer-logo {
+        width: 120px;
+    }
+    .app-download {
+        display: flex;
+        flex-direction: column;
+
+        & img {
+            margin-bottom: 10px;
+        }
+    }
+    .coppyright-text {
+        font-size: 1.2rem;
+    }
+    .payment img {
+        width: 350px;
+    }
+}

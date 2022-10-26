@@ -1,38 +1,45 @@
 import { useState } from 'react';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { faCartPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 import Tittle from '~/components/Tittle';
 import { PRODUCTS } from '~/components/Constants';
 import styles from './Products.module.scss';
+import ProductGallery from './ProductGallery';
+import Overlay from '~/components/Overlay';
 
 const cx = classNames.bind(styles);
 
 function Products() {
-    const [productCart, setProductCart] = useState([]);
+    const [index, setIndex] = useState();
+    const [openGallery, setOpenGallery] = useState(false);
 
-    const handleAddToCart = (product) => {
-        setProductCart((prev) => {
-            const newProducts = [...prev, product];
-            const jsonProducts = JSON.stringify(newProducts);
-            localStorage.setItem('products', jsonProducts);
-            return newProducts;
-        });
+    const handleOpenGallery = (id) => {
+        setIndex(id);
+        setOpenGallery(true);
+    };
 
-        toast.success('Product added to cart!', {
-            position: 'bottom-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-        });
+    const handleCloseGallery = () => {
+        setOpenGallery(false);
+    };
+
+    const handlePrevGallery = () => {
+        if (index <= 0) {
+            setIndex(PRODUCTS.length - 1);
+        } else {
+            setIndex((prev) => prev - 1);
+        }
+    };
+
+    const handleNextGallery = () => {
+        if (index >= PRODUCTS.length - 1) {
+            setIndex(0);
+        } else {
+            setIndex((prev) => prev + 1);
+        }
     };
 
     return (
@@ -47,17 +54,17 @@ function Products() {
                         >
                             <div className={cx('item')}>
                                 <div className={cx('thumb')}>
-                                    <img src={product.image} alt="" />
+                                    <img src={product.image} alt="" onClick={() => handleOpenGallery(product.id)} />
                                     <span className={cx('discount')}>{product.discount}</span>
                                     <div className={cx('interactive')}>
+                                        <div className={cx('interactive-item')}>
+                                            <FontAwesomeIcon icon={faSliders} />
+                                        </div>
                                         <div
                                             className={cx('interactive-item')}
-                                            onClick={() => handleAddToCart(product)}
+                                            onClick={() => handleOpenGallery(product.id)}
                                         >
-                                            <FontAwesomeIcon icon={faCartPlus} />
-                                        </div>
-                                        <div className={cx('interactive-item')}>
-                                            <FontAwesomeIcon icon={faHeart} />
+                                            <FontAwesomeIcon icon={faEye} />
                                         </div>
                                     </div>
                                 </div>
@@ -80,6 +87,18 @@ function Products() {
                     ))}
                 </div>
             </div>
+
+            {openGallery && (
+                <Overlay onClick={handleCloseGallery}>
+                    <ProductGallery
+                        data={PRODUCTS[index]}
+                        clickToClose={handleCloseGallery}
+                        clickToPrev={handlePrevGallery}
+                        clickToNext={handleNextGallery}
+                    />
+                </Overlay>
+            )}
+
             <ToastContainer
                 position="bottom-right"
                 autoClose={3000}

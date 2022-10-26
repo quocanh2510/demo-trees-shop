@@ -1,4 +1,4 @@
-import { faFacebookF, faGoogle, faGooglePlusG, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faGoogle, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -12,7 +12,7 @@ function FooterApp() {
             <div className={cx('container')}>
                 <div className={cx('footer-top')}>
                     <div className={cx('row')}>
-                        <div className={cx('col-lg-2')}>
+                        <div className={cx('col-lg-2', 'col-md-4')}>
                             <div className={cx('widget')}>
                                 <h3>OPENING TIME</h3>
                                 <ul className={cx('menu')}>
@@ -23,7 +23,7 @@ function FooterApp() {
                                 <p className={cx('note')}>We Work All The Holidays !</p>
                             </div>
                         </div>
-                        <div className={cx('col-lg-2')}>
+                        <div className={cx('col-lg-2', 'col-md-3')}>
                             <div className={cx('widget')}>
                                 <h3>INFORMATION</h3>
                                 <ul className={cx('menu')}>
@@ -45,7 +45,7 @@ function FooterApp() {
                                 </ul>
                             </div>
                         </div>
-                        <div className={cx('col-lg-4')}>
+                        <div className={cx('col-lg-4', 'col-md-5')}>
                             <div className={cx('widget', 'center')}>
                                 <img
                                     className={cx('footer-logo')}
@@ -96,7 +96,7 @@ function FooterApp() {
                                 </div>
                             </div>
                         </div>
-                        <div className={cx('col-lg-2')}>
+                        <div className={cx('col-lg-2', 'col-md-4')}>
                             <div className={cx('widget')}>
                                 <h3>MY ACCOUNT</h3>
                                 <ul className={cx('menu')}>
@@ -121,7 +121,7 @@ function FooterApp() {
                                 </ul>
                             </div>
                         </div>
-                        <div className={cx('col-lg-2')}>
+                        <div className={cx('col-lg-2', 'col-md-4')}>
                             <div className={cx('widget')}>
                                 <h3>CUSTOMER SERVICE</h3>
                                 <ul className={cx('menu')}>

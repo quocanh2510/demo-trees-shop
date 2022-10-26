@@ -64,19 +64,28 @@ function Navbar() {
     );
 
     return (
-        <nav className={cx('navbar')}>
-            <Tippy placement="bottom" interactive render={homeSubnav}>
-                <NavItem title="HOME" icon={faAngleDown} />
-            </Tippy>
-            <Tippy placement="bottom" interactive render={shopSubnav}>
-                <NavItem title="SHOP" icon={faAngleDown} />
-            </Tippy>
-            <Tippy placement="bottom" offset={[70, 10]} interactive render={blogSubnav}>
-                <NavItem title="BLOG" icon={faAngleDown} />
-            </Tippy>
-            <Tippy placement="bottom" offset={[70, 10]} interactive render={pagesSubnav}>
-                <NavItem title="PAGES" icon={faAngleDown} />
-            </Tippy>
+        //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
+        <nav className={cx('navbar', 'hide-on-mobile-tablet')}>
+            <div>
+                <Tippy placement="bottom" interactive render={homeSubnav}>
+                    <NavItem title="HOME" icon={faAngleDown} />
+                </Tippy>
+            </div>
+            <div>
+                <Tippy placement="bottom" interactive render={shopSubnav}>
+                    <NavItem title="SHOP" icon={faAngleDown} />
+                </Tippy>
+            </div>
+            <div>
+                <Tippy placement="bottom" offset={[70, 10]} interactive render={blogSubnav}>
+                    <NavItem title="BLOG" icon={faAngleDown} />
+                </Tippy>
+            </div>
+            <div>
+                <Tippy placement="bottom" offset={[70, 10]} interactive render={pagesSubnav}>
+                    <NavItem title="PAGES" icon={faAngleDown} />
+                </Tippy>
+            </div>
             <NavItem title="CONTACT US" />
         </nav>
     );

@@ -7,9 +7,40 @@
     background: url(https://htmldemo.net/lukani/lukani/assets/img/bg/bkg_top_vogue2.png) top center no-repeat;
 
     p {
-        padding: 0 386px;
+        padding: 0 200px;
         text-align: center;
         font-size: 1.4rem;
         line-height: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .wrapper {
+        & p {
+            padding: 0 10px;
+        }
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .wrapper {
+        & p {
+            padding: 0 60px;
+        }
     }
 }

@@ -77,3 +77,52 @@
 .brand-item {
     margin: 0 13px;
 }
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .testimonial {
+        & .content {
+            font-size: 1.4rem;
+            padding: 0 90px;
+        }
+    }
+    .icon img {
+        width: 45px;
+    }
+    .brand {
+        max-width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .brand::-webkit-scrollbar {
+        display: none;
+    }
+    .brand-item img {
+        width: 130px;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .testimonial {
+        & .content {
+            font-size: 1.6rem;
+        }
+    }
+    .brand-item img {
+        width: 120px;
+    }
+}

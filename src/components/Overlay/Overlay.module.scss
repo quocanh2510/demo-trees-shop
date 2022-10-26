@@ -16,6 +16,10 @@
     justify-content: flex-end;
 }
 
+.left {
+    justify-content: flex-start;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

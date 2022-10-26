@@ -35,3 +35,34 @@
 .border-none {
     border: none;
 }
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .item {
+        margin-bottom: 20px;
+        padding: 0 50px;
+        border-right: none;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .item {
+        margin-bottom: 20px;
+    }
+    .item.tablet-border-none {
+        border-right: none;
+    }
+}

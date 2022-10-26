@@ -1,39 +1,30 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faHeart, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import Navbar from './Navbar';
 import styles from './Header.module.scss';
 import PopperWrapper from '~/components/Popper';
-import { USER_MENU } from '~/components/Constants';
 import LoginForm from './Authentication/LoginForm';
 import RegisterForm from './Authentication/RegisterForm';
 import Overlay from '~/components/Overlay';
 import Cart from './Cart';
+import MobileMenu from './MobileMenu';
 
 const cx = classNames.bind(styles);
 
-let currentUser = true;
-
-const userMenu = (attrs) => (
-    <PopperWrapper>
-        <div tabIndex="-1" {...attrs}>
-            {USER_MENU.map((item, index) => (
-                <div className={cx('user-menu-item')} key={index}>
-                    {item}
-                </div>
-            ))}
-        </div>
-    </PopperWrapper>
-);
-
 function HeaderApp() {
+    const [currentUser, setCurrentUser] = useState(() => {
+        const userStorage = JSON.parse(localStorage.getItem('currentUser'));
+        return userStorage ?? false;
+    });
     const [visible, setVisible] = useState(false);
     const [login, setLogin] = useState(false);
     const [register, setRegister] = useState(false);
     const [cart, setCart] = useState(false);
+    const [mobileMenu, setMobileMenu] = useState(false);
 
     const toogleAnimation = () => {
         if (window.scrollY > 100) {
@@ -41,6 +32,17 @@ function HeaderApp() {
         } else if (window.scrollY <= 100) {
             setVisible(false);
         }
+    };
+
+    const handleLogin = () => {
+        setCurrentUser(true);
+        localStorage.setItem('currentUser', JSON.stringify(true));
+    };
+
+    const handleLogout = () => {
+        setCurrentUser(false);
+        localStorage.setItem('currentUser', JSON.stringify(false));
+        alert('Are you sure you want to logout?');
     };
 
     useEffect(() => {
@@ -57,26 +59,44 @@ function HeaderApp() {
         <>
             <header className={classes}>
                 <Navbar />
+                <div className={cx('menu-icon', 'hide-on-pc')} onClick={() => setMobileMenu(true)}>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
                 <div className={cx('logo')}>
                     <img src="https://longtk26.github.io/Trees-shop/assets/img/Logo/logo.jpg" alt="logo" />
                 </div>
                 <div className={cx('action')}>
-                    <div className={cx('search')}>
-                        <input className={cx('search-input')} placeholder="Search propduct..." />
+                    <div className={cx('search', 'hide-on-mobile')}>
+                        <input className={cx('search-input')} placeholder="Search product..." />
                         <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('header-icon')} />
                     </div>
-                    <FontAwesomeIcon
-                        icon={faCartShopping}
-                        className={cx('header-icon')}
-                        onClick={() => setCart(true)}
-                    />
 
                     {currentUser ? (
                         <>
-                            <FontAwesomeIcon icon={faHeart} className={cx('header-icon')} />
-                            <Tippy delay={[0, 300]} placement="bottom" interactive render={userMenu}>
+                            <FontAwesomeIcon
+                                icon={faCartShopping}
+                                className={cx('header-icon')}
+                                onClick={() => setCart(true)}
+                            />
+                            <Tippy
+                                delay={[0, 300]}
+                                placement="bottom"
+                                interactive
+                                render={(attrs) => (
+                                    <PopperWrapper>
+                                        <div tabIndex="-1" {...attrs}>
+                                            <div className={cx('user-menu-item')}>My Account</div>
+                                            <div className={cx('user-menu-item')}>Shopping Cart</div>
+                                            <div className={cx('user-menu-item')}>Wishlist</div>
+                                            <a href="/" className={cx('user-menu-item')} onClick={handleLogout}>
+                                                Logout
+                                            </a>
+                                        </div>
+                                    </PopperWrapper>
+                                )}
+                            >
                                 <img
-                                    src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/6892305417544663046.jpeg?x-expires=1665079200&x-signature=UT58gREYc4P0FQu5QdpKFlcAIpM%3D"
+                                    src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
                                     alt="avatar"
                                     className={cx('avatar')}
                                 />
@@ -97,6 +117,12 @@ function HeaderApp() {
                 </div>
             </header>
 
+            {mobileMenu && (
+                <Overlay left onClick={() => setMobileMenu(false)}>
+                    <MobileMenu handleCloseMenu={() => setMobileMenu(false)} />
+                </Overlay>
+            )}
+
             {cart && (
                 <Overlay right onClick={() => setCart(false)}>
                     <Cart handleCloseCart={() => setCart(false)} />
@@ -105,12 +131,12 @@ function HeaderApp() {
 
             {login && (
                 <Overlay onClick={() => setLogin(false)}>
-                    <LoginForm HandleCloseForm={() => setLogin(false)} />
+                    <LoginForm handleCloseForm={() => setLogin(false)} handleUser={handleLogin} />
                 </Overlay>
             )}
             {register && (
                 <Overlay onClick={() => setRegister(false)}>
-                    <RegisterForm HandleCloseForm={() => setRegister(false)} />
+                    <RegisterForm handleCloseForm={() => setRegister(false)} />
                 </Overlay>
             )}
         </>

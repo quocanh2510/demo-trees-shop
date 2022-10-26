@@ -41,3 +41,41 @@
         color: var(--primary-color);
     }
 }
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .wrapper {
+        padding: 40px 0 60px;
+    }
+    .form {
+        width: 350px;
+    }
+    .email-icon {
+        font-size: 2rem;
+    }
+    .form-input,
+    .submit {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .form-input,
+    .submit {
+        font-size: 1.3rem;
+    }
+}
