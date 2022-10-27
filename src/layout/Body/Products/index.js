@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { faEye, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { ToastContainer } from 'react-toastify';
 
@@ -54,18 +54,16 @@ function Products() {
                         >
                             <div className={cx('item')}>
                                 <div className={cx('thumb')}>
-                                    <img src={product.image} alt="" onClick={() => handleOpenGallery(product.id)} />
+                                    <img src={product.image} alt="" />
                                     <span className={cx('discount')}>{product.discount}</span>
                                     <div className={cx('interactive')}>
-                                        <div className={cx('interactive-item')}>
-                                            <FontAwesomeIcon icon={faSliders} />
-                                        </div>
-                                        <div
-                                            className={cx('interactive-item')}
+                                        <button
+                                            className={cx('see-more')}
                                             onClick={() => handleOpenGallery(product.id)}
                                         >
-                                            <FontAwesomeIcon icon={faEye} />
-                                        </div>
+                                            See more{' '}
+                                            <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('see-more-icon')} />
+                                        </button>
                                     </div>
                                 </div>
                                 <div className={cx('content')}>
