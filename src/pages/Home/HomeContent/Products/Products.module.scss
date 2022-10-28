@@ -1,0 +1,141 @@
+.wrapper {
+    padding: 0 12px;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-family: 'Lora', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    text-align: center;
+}
+
+.item {
+    margin-bottom: 50px;
+}
+
+.item:hover .interactive {
+    visibility: visible;
+    opacity: 1;
+}
+
+.thumb {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover .interactive {
+        opacity: 1;
+    }
+
+    &:hover img {
+        transform: scale(1.3);
+        filter: blur(2px);
+    }
+
+    & img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: blur(0px);
+        transition: all 0.4s ease;
+    }
+
+    .discount {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        padding: 4px 14px;
+        font-size: 1.4rem;
+        border-radius: 2px;
+        background-color: #dc0f0f;
+        color: var(--white);
+    }
+}
+
+.interactive {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    & .see-more {
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-size: 1.5rem;
+        transition: all 0.4s ease;
+        background-color: var(--white);
+
+        &:hover {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+    }
+
+    .see-more-icon {
+        margin-left: 2px;
+        font-size: 1.8rem;
+    }
+}
+
+.content {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.rating {
+    font-size: 1.6rem;
+    color: #feb954;
+}
+
+.rating-icon {
+    margin-right: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 8px 0 14px 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+}
+
+.new-price {
+    font-weight: 500;
+    font-size: 15px;
+    color: #79a206;
+}
+
+.old-price {
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .wrapper {
+        margin-bottom: 30px;
+    }
+}

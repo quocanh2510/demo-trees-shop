@@ -1,0 +1,132 @@
+.wrapper {
+    margin: 80px 0;
+}
+
+.map-section {
+    margin: 80px 0;
+}
+
+.map {
+    text-align: center;
+    width: 100%;
+    height: 460px;
+
+    & iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.contact {
+    & .content {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+}
+
+.title {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    font-size: 1.4rem;
+    padding: 13px 0;
+    border-top: 1px solid #e1e1e1;
+
+    & a {
+        transition: all 0.3s ease;
+    }
+
+    &:hover a {
+        color: var(--primary-color);
+    }
+}
+
+.contact-icon {
+    margin-right: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    & label {
+        margin-bottom: 6px;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    & input {
+        font-size: 1.4rem;
+        padding: 0 20px;
+        height: 45px;
+        width: 100%;
+        color: #757575;
+        border: 1px solid #e1e1e1;
+    }
+
+    & textarea {
+        border: 1px solid #e1e1e1;
+        height: 170px;
+        padding: 10px 20px;
+        font-size: 1.4rem;
+        color: #222;
+        outline: none;
+    }
+}
+
+.submit {
+    line-height: 42px;
+    padding: 0 30px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    background-color: var(--black);
+    color: var(--white);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .map-section {
+        margin: 50px 0;
+    }
+    .map {
+        height: 250px;
+    }
+    .mg-b {
+        margin-bottom: 50px;
+    }
+    .submit {
+        line-height: 50px;
+        width: 100%;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .contact {
+        margin: 0 10px;
+    }
+}

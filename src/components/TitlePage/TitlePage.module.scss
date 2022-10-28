@@ -1,0 +1,20 @@
+.wrapper {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 4.2rem;
+    font-weight: 400;
+    font-family: 'Lora', serif;
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .wrapper {
+        font-size: 3rem;
+        padding: 34px;
+    }
+}

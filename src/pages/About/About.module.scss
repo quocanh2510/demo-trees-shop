@@ -1,0 +1,243 @@
+.wrapper {
+    margin: 80px 0;
+
+    & h1,
+    h3 {
+        font-family: 'Lora', serif;
+        font-weight: 400;
+    }
+
+    & p {
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+        padding-bottom: 0;
+    }
+}
+.about-section {
+    padding: 100px 0;
+}
+
+.about-thumb {
+    width: 100%;
+}
+
+.about-content {
+    text-align: center;
+    padding-top: 26px;
+
+    & h1 {
+        font-size: 2.2rem;
+        margin-bottom: 21px;
+    }
+
+    & p {
+        margin: 0 auto;
+        max-width: 890px;
+    }
+}
+
+.about-signature {
+    margin-top: 25px;
+}
+
+.chose-us {
+    background-image: url('https://htmldemo.net/lukani/lukani/assets/img/about/about-us-policy-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 100px;
+    padding: 100px 0 93px;
+}
+
+.chose-item {
+    text-align: center;
+
+    &:hover .chose-icon {
+        transform: rotateY(180deg);
+    }
+}
+
+.chose-icon {
+    margin-bottom: 23px;
+    transition: all 0.3s ease;
+}
+
+.chose-content {
+    & h3 {
+        margin-bottom: 19px;
+        font-size: 2.2rem;
+    }
+}
+
+.gallery-section {
+    margin-bottom: 50px;
+}
+
+.gallery-container {
+    padding-bottom: 93px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.gallery-item {
+    margin: 0 10px;
+}
+
+.gallery-image {
+    width: 100%;
+}
+
+.gallery-content {
+    padding-top: 21px;
+    text-align: center;
+
+    & h3 {
+        margin-bottom: 12px;
+        font-size: 2.8rem;
+    }
+
+    & p {
+        text-align: justify;
+    }
+}
+
+.feedback-item {
+    padding-top: 40px;
+    margin: 0 30px;
+
+    & h3 {
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--primary-color);
+        color: var(--white);
+
+        .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary-color);
+        }
+    }
+}
+
+.faq-header:hover ~ .faq-content {
+    max-height: 220px;
+    border: 1px solid #ddd;
+}
+
+.faq-icon-wrap {
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+.faq-icon {
+    font-size: 2rem;
+    transition: all 0.4s ease;
+}
+
+.faq-content {
+    max-height: 0;
+    padding-left: 15px;
+    transition: max-height 0.4s ease;
+    overflow: hidden;
+}
+
+.padding-t {
+    padding-top: 15px;
+}
+
+.padding-b {
+    padding-bottom: 15px;
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .about-section {
+        padding: 50px 0;
+    }
+    .about-content {
+        & h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 25px;
+        }
+
+        & p {
+            font-size: 1.3rem;
+        }
+    }
+    .chose-us {
+        padding: 60px 0 28px;
+        margin-bottom: 50px;
+    }
+    .chose-item {
+        margin-bottom: 30px;
+    }
+    .chose-icon {
+        margin-bottom: 12px;
+    }
+    .chose-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    .gallery-container {
+        padding-bottom: 0;
+    }
+    .gallery-item {
+        margin-bottom: 50px;
+    }
+    .gallery-content p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .feedback-item {
+        margin: 0;
+    }
+    .feedback-item h3 {
+        font-size: 2.2rem;
+    }
+    .gallery-content {
+        & h3 {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .chose-content {
+        & h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    }
+}
