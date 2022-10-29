@@ -1,11 +1,11 @@
-import MainLayout from '~/layout/MainLayout';
+import HomeLayout from '~/layout/HomeLayout';
 import HomeContent from './HomeContent';
 
 function Home() {
     return (
-        <MainLayout>
+        <HomeLayout>
             <HomeContent />
-        </MainLayout>
+        </HomeLayout>
     );
 }
 

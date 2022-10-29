@@ -4,43 +4,20 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 70px;
     padding: 18px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 11%);
     background-color: transparent;
+}
+
+.backgroundWhite {
+    background-color: var(--white);
 }
 
 .navbar {
     display: flex;
-}
-
-.navbar-item {
-    display: flex;
-    flex-direction: column;
-    margin: 0 6px;
-    transition: all 0.4s ease;
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 8px 12px;
-
-    &:hover span {
-        width: 100%;
-    }
-
-    & span {
-        height: 3px;
-        width: 0%;
-        background-color: var(--primary-color);
-        transition: width 0.4s ease;
-    }
-
-    &:hover {
-        cursor: pointer;
-        color: var(--primary-color);
-    }
 }
 
 .logo img {
@@ -125,6 +102,7 @@
 
 .animation {
     background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 11%);
     animation: headerSlide 0.5s ease;
 }
 

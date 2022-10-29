@@ -53,7 +53,7 @@ function About() {
                 </div>
                 <div className={cx('chose-us')}>
                     <div className={cx('container')}>
-                        <div className={cx('row')}>
+                        <div className={cx('row', 'g-lg-5')}>
                             <div className={cx('col-lg-4', 'col-md-4', 'col-sm-12')}>
                                 <div className={cx('chose-item')}>
                                     <img
@@ -108,7 +108,7 @@ function About() {
                 <div className={cx('gallery-section')}>
                     <div className={cx('container')}>
                         <div className={cx('gallery-container')}>
-                            <div className={cx('row')}>
+                            <div className={cx('row', 'g-lg-5')}>
                                 <div className={cx('col-lg-4', 'col-md-4', 'col-sm-12')}>
                                     <div className={cx('gallery-item')}>
                                         <img
@@ -166,7 +166,7 @@ function About() {
                 </div>
                 <div className={cx('feedback')}>
                     <div className={cx('container')}>
-                        <div className={cx('row')}>
+                        <div className={cx('row', 'g-lg-5')}>
                             <div className={cx('col-lg-6', 'col-md-6', 'col-sm-12')}>
                                 <div className={cx('feedback-item')}>
                                     <h3>What Can We Do For You ?</h3>

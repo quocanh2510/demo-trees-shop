@@ -31,17 +31,10 @@
 
 .menu-list {
     margin-top: 30%;
-    font-size: 1.5rem;
-}
-.menu-item {
-    display: block;
-    padding: 12px 0;
-    border-bottom: 1px solid #e1e1e1;
-    transition: all 0.3s ease;
 
-    &:hover {
-        cursor: pointer;
-        color: var(--primary-color);
+    & .menu-item {
+        border-bottom: 1px solid #e1e1e1;
+        width: 100%;
     }
 }
 

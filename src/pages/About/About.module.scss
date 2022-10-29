@@ -1,5 +1,5 @@
 .wrapper {
-    margin: 80px 0;
+    margin: 70px 0;
 
     & h1,
     h3 {
@@ -79,10 +79,6 @@
     border-bottom: 1px solid #e1e1e1;
 }
 
-.gallery-item {
-    margin: 0 10px;
-}
-
 .gallery-image {
     width: 100%;
 }
@@ -103,7 +99,6 @@
 
 .feedback-item {
     padding-top: 40px;
-    margin: 0 30px;
 
     & h3 {
         font-size: 2.8rem;

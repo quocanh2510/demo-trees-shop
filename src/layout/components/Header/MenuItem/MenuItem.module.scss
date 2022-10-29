@@ -1,0 +1,43 @@
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 72px;
+    text-align: center;
+
+    & .title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 70px;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+    }
+
+    &:hover .underline {
+        width: 100%;
+    }
+
+    & .underline {
+        height: 4px;
+        width: 0%;
+        background-color: var(--primary-color);
+        transition: width 0.4s ease;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+
+    &.active {
+        color: var(--primary-color);
+    }
+
+    &.active .underline {
+        width: 100%;
+    }
+}

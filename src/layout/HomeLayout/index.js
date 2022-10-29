@@ -5,7 +5,7 @@ import ScrollToTop from '~/components/ScrollToTop';
 function MainLayout({ children }) {
     return (
         <>
-            <Header backgroundWhite />
+            <Header />
             {children}
             <ScrollToTop />
             <Footer />

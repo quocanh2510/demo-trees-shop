@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesRight, faChevronLeft, faChevronRight, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import Carousel from 'react-bootstrap/Carousel';
 
 import styles from './Blog.module.scss';
 import MainLayout from '~/layout/MainLayout';
@@ -17,12 +18,42 @@ function Blog() {
                 <TitlePage>Blog</TitlePage>
                 <div className={cx('blog-section')}>
                     <div className={cx('container')}>
-                        <div className={cx('row')}>
+                        <div className={cx('row', 'g-5')}>
                             <div className={cx('col-lg-9', 'col-md-12', 'col-sm-12')}>
                                 <div className={cx('blog-list')}>
                                     {BLOG_PAGE.map((item, index) => (
                                         <div key={index} className={cx('blog-item', { borderB: item.separate })}>
-                                            <img src={item.thumb} alt="" className={cx('blog-thumb')} />
+                                            {typeof item.thumb === 'string' ? (
+                                                <img src={item.thumb} alt="" className={cx('blog-thumb')} />
+                                            ) : (
+                                                <Carousel
+                                                    className={cx('blog-thumb')}
+                                                    variant="dark"
+                                                    prevIcon={
+                                                        <span>
+                                                            <FontAwesomeIcon
+                                                                className={cx('prev-btn', 'hide-on-mobile-tablet')}
+                                                                icon={faChevronLeft}
+                                                            />
+                                                        </span>
+                                                    }
+                                                    nextIcon={
+                                                        <span>
+                                                            <FontAwesomeIcon
+                                                                className={cx('next-btn', 'hide-on-mobile-tablet')}
+                                                                icon={faChevronRight}
+                                                            />
+                                                        </span>
+                                                    }
+                                                    slide
+                                                >
+                                                    {item.thumb.map((item, index) => (
+                                                        <Carousel.Item key={index}>
+                                                            <img className={cx('d-block', 'w-100')} src={item} alt="" />
+                                                        </Carousel.Item>
+                                                    ))}
+                                                </Carousel>
+                                            )}
                                             <div className={cx('blog-content')}>
                                                 <h2 className={cx('blog-title')}>
                                                     <FontAwesomeIcon icon={faPaperPlane} className={cx('title-icon')} />

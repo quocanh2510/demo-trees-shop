@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +6,7 @@ import { faFacebookF, faGooglePlusG, faLinkedinIn, faPinterestP, faTwitter } fro
 
 import styles from './MobileMenu.module.scss';
 import ModalWrapper from '~/components/Modal';
+import MenuItem from '../MenuItem';
 
 const cx = classNames.bind(styles);
 
@@ -16,20 +16,12 @@ function MobileMenu({ handleCloseMenu }) {
             <div className={cx('close-btn')} onClick={handleCloseMenu}>
                 <FontAwesomeIcon icon={faClose} />
             </div>
-            <div className={cx('menu-list')}>
-                <Link to="/" className={cx('menu-item')}>
-                    Home
-                </Link>
-                <Link to="/blog" className={cx('menu-item')}>
-                    Blog
-                </Link>
-                <Link to="/about" className={cx('menu-item')}>
-                    About Us
-                </Link>
-                <Link to="/contact" className={cx('menu-item')}>
-                    Contact Us
-                </Link>
-            </div>
+            <nav className={cx('menu-list')}>
+                <MenuItem to="/" title="HOME" mobile className={cx('menu-item')} />
+                <MenuItem to="/blog" title="BLOG" mobile className={cx('menu-item')} />
+                <MenuItem to="/about" title="ABOUT" mobile className={cx('menu-item')} />
+                <MenuItem to="/contact" title="CONTACT" mobile className={cx('menu-item')} />
+            </nav>
             <a href="/" className={cx('email')}>
                 <FontAwesomeIcon icon={faEnvelope} /> demo@example.com
             </a>

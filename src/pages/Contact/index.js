@@ -33,7 +33,7 @@ function Contact() {
                 </div>
                 <div className={cx('contact-section')}>
                     <div className={cx('container')}>
-                        <div className={cx('row')}>
+                        <div className={cx('row', 'g-lg-5', 'g-md-5')}>
                             <div className={cx('col-lg-6', 'col-md-6', 'col-sm-12')}>
                                 <div className={cx('contact', 'mg-b')}>
                                     <h3 className={cx('title')}>Contact Us</h3>

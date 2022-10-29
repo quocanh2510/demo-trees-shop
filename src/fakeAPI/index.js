@@ -210,7 +210,12 @@ export const BLOG_PAGE = [
             'Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus praesent ornare.',
     },
     {
-        thumb: 'https://htmldemo.net/lukani/lukani/assets/img/blog/blogpage6.jpg',
+        thumb: [
+            'https://htmldemo.net/lukani/lukani/assets/img/blog/blogpage6.jpg',
+            'https://htmldemo.net/lukani/lukani/assets/img/blog/blogpage1.jpg',
+            'https://htmldemo.net/lukani/lukani/assets/img/blog/blogpage3.jpg',
+            'https://htmldemo.net/lukani/lukani/assets/img/blog/blogpage4.jpg',
+        ],
         title: 'Post With Gallery',
         author: 'admin',
         date: 'July 16, 2019',

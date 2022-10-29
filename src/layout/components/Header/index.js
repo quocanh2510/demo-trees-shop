@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import PopperWrapper from '~/components/Popper';
@@ -12,10 +12,11 @@ import RegisterForm from './Authentication/RegisterForm';
 import Overlay from '~/components/Overlay';
 import Cart from './Cart';
 import MobileMenu from './MobileMenu';
+import MenuItem from './MenuItem';
 
 const cx = classNames.bind(styles);
 
-function HeaderApp() {
+function HeaderApp({ backgroundWhite }) {
     const [currentUser, setCurrentUser] = useState(() => {
         const userStorage = JSON.parse(localStorage.getItem('currentUser'));
         return userStorage ?? false;
@@ -53,31 +54,24 @@ function HeaderApp() {
 
     const classes = cx('wrapper', {
         animation: visible,
+        backgroundWhite: backgroundWhite,
     });
 
     return (
         <>
             <header className={classes}>
                 <nav className={cx('navbar', 'hide-on-mobile-tablet')}>
-                    <Link to="/" className={cx('navbar-item')}>
-                        HOME <span />
-                    </Link>
-                    <Link to="/blog" className={cx('navbar-item')}>
-                        BLOG <span />
-                    </Link>
-                    <Link to="/about" className={cx('navbar-item')}>
-                        ABOUT US <span />
-                    </Link>
-                    <Link to="/contact" className={cx('navbar-item')}>
-                        CONTACT US <span />
-                    </Link>
+                    <MenuItem to="/" title="Home" />
+                    <MenuItem to="/blog" title="Blog" />
+                    <MenuItem to="/about" title="About" />
+                    <MenuItem to="/contact" title="Contact" />
                 </nav>
                 <div className={cx('menu-icon', 'hide-on-pc')} onClick={() => setMobileMenu(true)}>
                     <FontAwesomeIcon icon={faBars} />
                 </div>
-                <div className={cx('logo')}>
+                <Link to="/" className={cx('logo')}>
                     <img src="https://longtk26.github.io/Trees-shop/assets/img/Logo/logo.jpg" alt="logo" />
-                </div>
+                </Link>
                 <div className={cx('action')}>
                     <div className={cx('search', 'hide-on-mobile')}>
                         <input className={cx('search-input')} placeholder="Search anything..." />

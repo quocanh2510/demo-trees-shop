@@ -1,5 +1,5 @@
 .wrapper {
-    margin: 80px 0;
+    margin: 70px 0;
 }
 
 .blog-section {
@@ -19,6 +19,11 @@
 
 .blog-thumb {
     width: 37%;
+    object-fit: cover;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .blog-content {
@@ -49,7 +54,7 @@
 }
 
 audio {
-    width: 90%;
+    width: 100%;
     margin-bottom: 14px;
 }
 
