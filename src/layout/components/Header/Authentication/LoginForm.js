@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 import styles from './Authentication.module.scss';
 import ModalWrapper from '~/components/Modal';
@@ -25,27 +24,9 @@ function LoginForm({ handleCloseForm, handleUser }) {
                 handleCloseForm();
                 handleUser();
 
-                toast.success('Login success!', {
-                    position: 'bottom-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                });
+                Swal.fire('Successfully!', 'Login success', 'success');
             } else if (item.username !== data.username) {
-                toast.error('Your Username or Password do not match, Try again!', {
-                    position: 'bottom-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                });
+                Swal.fire('Oops...', 'Something went wrong!', 'error');
             }
         });
     };

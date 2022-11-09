@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+import Swal from 'sweetalert2';
 
 import styles from './Header.module.scss';
 import PopperWrapper from '~/components/Popper';
@@ -41,9 +42,20 @@ function HeaderApp({ backgroundWhite }) {
     };
 
     const handleLogout = () => {
-        setCurrentUser(false);
-        localStorage.setItem('currentUser', JSON.stringify(false));
-        alert('Are you sure you want to logout?');
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Logout!', 'See you later', 'success');
+                setCurrentUser(false);
+                localStorage.setItem('currentUser', JSON.stringify(false));
+            }
+        });
     };
 
     useEffect(() => {
@@ -95,9 +107,9 @@ function HeaderApp({ backgroundWhite }) {
                                             <div className={cx('user-menu-item')}>My Account</div>
                                             <div className={cx('user-menu-item')}>Shopping Cart</div>
                                             <div className={cx('user-menu-item')}>Wishlist</div>
-                                            <a href="/" className={cx('user-menu-item')} onClick={handleLogout}>
+                                            <div className={cx('user-menu-item')} onClick={handleLogout}>
                                                 Logout
-                                            </a>
+                                            </div>
                                         </div>
                                     </PopperWrapper>
                                 )}

@@ -4,8 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 import styles from './Authentication.module.scss';
 import ModalWrapper from '~/components/Modal';
@@ -30,16 +29,22 @@ function RegisterForm({ handleCloseForm }) {
             localStorage.setItem('users', JSON.stringify(userStorage));
             return userStorage;
         });
-
-        toast.success('Sign up success! Please login to shopping', {
-            position: 'bottom-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully!',
+            text: 'Please login to shopping',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif")
+              left top
+              no-repeat
+            `,
+            customClass: {
+                title: 'font-size: 16px',
+            },
         });
     };
 
