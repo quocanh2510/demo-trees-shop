@@ -61,8 +61,14 @@ function Products() {
                                             className={cx('see-more')}
                                             onClick={() => handleOpenGallery(product.id)}
                                         >
-                                            See more{' '}
-                                            <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('see-more-icon')} />
+                                            <span>Buy now!</span>
+                                            <span>
+                                                See more{' '}
+                                                <FontAwesomeIcon
+                                                    icon={faMagnifyingGlass}
+                                                    className={cx('see-more-icon')}
+                                                />
+                                            </span>
                                         </button>
                                     </div>
                                 </div>
