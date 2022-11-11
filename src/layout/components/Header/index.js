@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import Swal from 'sweetalert2';
 
@@ -114,11 +114,9 @@ function HeaderApp({ backgroundWhite }) {
                                     </PopperWrapper>
                                 )}
                             >
-                                <img
-                                    src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
-                                    alt="avatar"
-                                    className={cx('avatar')}
-                                />
+                                <div className={cx('avatar')}>
+                                    <FontAwesomeIcon icon={faUser} className={cx('header-icon')} />
+                                </div>
                             </Tippy>
                         </>
                     ) : (

@@ -28,10 +28,12 @@
     display: flex;
     align-items: center;
     border-radius: 999px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #e1e1e1;
 }
 
 .search-input {
-    padding: 12px;
+    padding: 12px 0 12px 16px;
     font-size: 1.4rem;
     width: 140px;
     background-color: transparent;
@@ -39,7 +41,7 @@
 }
 
 .header-icon {
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 6px 6px;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -58,6 +60,7 @@
 .authentication {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .login {
@@ -79,12 +82,9 @@
 }
 
 .avatar {
-    border-radius: 50%;
-    object-fit: cover;
-    height: 28px;
-    width: 28px;
-    margin-left: 16px;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-menu-item {
@@ -102,7 +102,7 @@
 
 .animation {
     background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 11%);
+    box-shadow: 0 3px 3px rgb(0 0 0 / 11%);
     animation: headerSlide 0.5s ease;
 }
 
