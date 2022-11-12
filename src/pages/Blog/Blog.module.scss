@@ -65,17 +65,19 @@ audio {
 }
 
 .more-btn {
-    color: var(--white);
-    background-color: #333;
+    background-color: #e0e0e0;
+    box-shadow: 7px 7px 15px #a4a4a4, -7px -7px 15px #ffffff;
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 36px;
     padding: 0 25px;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s linear;
 
     &:hover {
         background-color: var(--primary-color);
+        color: var(--white);
+        box-shadow: inset 7px 7px 15px #587604, inset -7px -7px 15px #9ace08;
     }
 }
 

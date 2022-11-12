@@ -13,7 +13,7 @@
 }
 
 .backgroundWhite {
-    background-color: var(--white);
+    background-color: rgba(224, 224, 224, 0.9);
 }
 
 .navbar {
@@ -28,8 +28,7 @@
     display: flex;
     align-items: center;
     border-radius: 999px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-    border: 1px solid #e1e1e1;
+    box-shadow: 12px 12px 24px #989898, -12px -12px 18px #ffffff;
     margin-right: 16px;
 }
 
@@ -101,7 +100,7 @@
 }
 
 .animation {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(224, 224, 224, 0.9);
     box-shadow: 0 3px 3px rgb(0 0 0 / 11%);
     animation: headerSlide 0.5s ease;
 }
