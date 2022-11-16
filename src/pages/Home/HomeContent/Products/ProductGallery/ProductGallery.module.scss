@@ -136,8 +136,9 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: var(--primary-color);
+        transform: translateY(-4px);
         color: var(--white);
+        box-shadow: 5px 5px 2px #dadada;
     }
 }
 
