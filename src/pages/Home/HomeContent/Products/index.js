@@ -54,7 +54,7 @@ function Products() {
                         >
                             <div className={cx('item')}>
                                 <div className={cx('thumb')}>
-                                    <img src={product.image} alt="" />
+                                    <img src={product.image} alt="" loading="lazy" />
                                     <span className={cx('discount')}>{product.discount}</span>
                                     <div className={cx('interactive')}>
                                         <button

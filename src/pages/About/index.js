@@ -25,6 +25,7 @@ function About() {
                                         src="https://htmldemo.net/lukani/lukani/assets/img/about/about1.jpg"
                                         alt=""
                                         className={cx('about-thumb')}
+                                        loading="lazy"
                                     />
                                     <div className={cx('about-content')}>
                                         <h1>
@@ -43,6 +44,7 @@ function About() {
                                             <img
                                                 src="https://htmldemo.net/lukani/lukani/assets/img/about/about-us-signature.png"
                                                 alt=""
+                                                loading="lazy"
                                             />
                                         </div>
                                     </div>
@@ -60,6 +62,7 @@ function About() {
                                         src="https://htmldemo.net/lukani/lukani/assets/img/about/About_icon1.png"
                                         alt=""
                                         className={cx('chose-icon')}
+                                        loading="lazy"
                                     />
                                     <div className={cx('chose-content')}>
                                         <h3>Creative Design</h3>
@@ -76,6 +79,7 @@ function About() {
                                         src="https://htmldemo.net/lukani/lukani/assets/img/about/About_icon2.png"
                                         alt=""
                                         className={cx('chose-icon')}
+                                        loading="lazy"
                                     />
                                     <div className={cx('chose-content')}>
                                         <h3>100% Money Back Guarantee</h3>
@@ -92,6 +96,7 @@ function About() {
                                         src="https://htmldemo.net/lukani/lukani/assets/img/about/About_icon3.png"
                                         alt=""
                                         className={cx('chose-icon')}
+                                        loading="lazy"
                                     />
                                     <div className={cx('chose-content')}>
                                         <h3>Online Support 24/7</h3>
@@ -115,6 +120,7 @@ function About() {
                                             src="https://htmldemo.net/lukani/lukani/assets/img/about/about2.jpg"
                                             alt=""
                                             className={cx('gallery-image')}
+                                            loading="lazy"
                                         />
                                         <div className={cx('gallery-content')}>
                                             <h3>What Do We Do?</h3>
@@ -132,6 +138,7 @@ function About() {
                                             src="https://htmldemo.net/lukani/lukani/assets/img/about/about3.jpg"
                                             alt=""
                                             className={cx('gallery-image')}
+                                            loading="lazy"
                                         />
                                         <div className={cx('gallery-content')}>
                                             <h3>Our Mission</h3>
@@ -149,6 +156,7 @@ function About() {
                                             src="https://htmldemo.net/lukani/lukani/assets/img/about/about4.jpg"
                                             alt=""
                                             className={cx('gallery-image')}
+                                            loading="lazy"
                                         />
                                         <div className={cx('gallery-content')}>
                                             <h3>History Of Us</h3>

@@ -24,7 +24,12 @@ function Blog() {
                                     {BLOG_PAGE.map((item, index) => (
                                         <div key={index} className={cx('blog-item', { borderB: item.separate })}>
                                             {typeof item.thumb === 'string' ? (
-                                                <img src={item.thumb} alt="" className={cx('blog-thumb')} />
+                                                <img
+                                                    src={item.thumb}
+                                                    alt=""
+                                                    className={cx('blog-thumb')}
+                                                    loading="lazy"
+                                                />
                                             ) : (
                                                 <Carousel
                                                     className={cx('blog-thumb')}
