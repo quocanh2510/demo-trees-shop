@@ -22,9 +22,10 @@
     }
 
     & .underline {
-        height: 4px;
+        height: 5px;
         width: 0%;
         background-color: var(--primary-color);
+        border-radius: 999px;
         transition: width 0.4s ease;
     }
 

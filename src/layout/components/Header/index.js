@@ -2,7 +2,16 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCartShopping, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBars,
+    faCartShopping,
+    faMagnifyingGlass,
+    faUser,
+    faPenNib,
+    faBagShopping,
+    faBarsStaggered,
+    faRightFromBracket,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import Swal from 'sweetalert2';
 
@@ -104,10 +113,29 @@ function HeaderApp({ backgroundWhite }) {
                                 render={(attrs) => (
                                     <PopperWrapper>
                                         <div tabIndex="-1" {...attrs}>
-                                            <div className={cx('user-menu-item')}>My Account</div>
-                                            <div className={cx('user-menu-item')}>Shopping Cart</div>
-                                            <div className={cx('user-menu-item')}>Wishlist</div>
+                                            <div className={cx('user-menu-item')}>
+                                                <FontAwesomeIcon className={cx('user-menu-icon')} icon={faPenNib} />
+                                                My Account
+                                            </div>
+                                            <div className={cx('user-menu-item')}>
+                                                <FontAwesomeIcon
+                                                    className={cx('user-menu-icon')}
+                                                    icon={faBagShopping}
+                                                />
+                                                Shopping Cart
+                                            </div>
+                                            <div className={cx('user-menu-item')}>
+                                                <FontAwesomeIcon
+                                                    className={cx('user-menu-icon')}
+                                                    icon={faBarsStaggered}
+                                                />
+                                                Wishlist
+                                            </div>
                                             <div className={cx('user-menu-item')} onClick={handleLogout}>
+                                                <FontAwesomeIcon
+                                                    className={cx('user-menu-icon')}
+                                                    icon={faRightFromBracket}
+                                                />
                                                 Logout
                                             </div>
                                         </div>
