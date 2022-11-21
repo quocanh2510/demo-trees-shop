@@ -8,9 +8,9 @@ import LoadingPage from './components/LoadingPage';
 
 function App() {
     const [loading, setLoading] = useState(true);
-    window.onload = () => {
+    setTimeout(() => {
         setLoading(false);
-    };
+    }, 2000);
 
     return (
         <>
